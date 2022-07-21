@@ -1,0 +1,20 @@
+{
+    "name": "root",
+    "private": true,
+    "scripts": {
+        "start": "npx lerna run start --parallel",
+        "stop": "kill-port --port 3000,3001,3002",
+        "kill": "kill-port --port "
+    },
+    "devDependencies": {
+        "lerna": "^5.1.8"
+    },
+    "workspaces": [
+        "cart",
+        "common",
+        "shop"
+    ],
+    "dependencies": {
+        "kill-port": "^2.0.1"
+    }
+}

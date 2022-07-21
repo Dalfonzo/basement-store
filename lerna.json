@@ -1,0 +1,4 @@
+{
+    "packages": ["cart", "common", "shop"],
+    "version": "0.0.0"
+}
