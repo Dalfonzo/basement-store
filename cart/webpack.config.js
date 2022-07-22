@@ -40,6 +40,18 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
+      {
+        oneOf: [
+          {
+            test: /\.svg$/,
+            type: 'asset/inline',
+          },
+          {
+            test: /\.(jpg|png|svg)$/,
+            type: 'asset/resource',
+          },
+        ],
+      },
     ],
   },
 
