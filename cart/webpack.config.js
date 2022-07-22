@@ -14,6 +14,9 @@ module.exports = {
   devServer: {
     port: 3002,
     historyApiFallback: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
 
   module: {
@@ -63,8 +66,7 @@ module.exports = {
         common: 'common@http://localhost:3000/remoteEntry.js',
       },
       exposes: {
-        './Cart': './src/bootstrap.tsx',
-        './Routes': './src/routes.tsx',
+        './Cart': './src/App.tsx',
       },
       shared: {
         ...deps,
