@@ -1,11 +1,11 @@
 import React from 'react'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ThemeProvider } from 'common/Theme'
 
 const App = () => {
   return (
-    <ChakraProvider>
+    <ThemeProvider>
       <div>Cart</div>
-    </ChakraProvider>
+    </ThemeProvider>
   )
 }
 

@@ -53,6 +53,7 @@ module.exports = {
       },
       exposes: {
         './Store': './src/store',
+        './Theme': './src/theme',
       },
       shared: {
         ...deps,

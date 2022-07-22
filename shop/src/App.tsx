@@ -1,10 +1,10 @@
 import React from 'react'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ThemeProvider } from 'common/Theme'
 
 const App = () => (
-  <ChakraProvider>
+  <ThemeProvider>
     <div>Landing</div>
-  </ChakraProvider>
+  </ThemeProvider>
 )
 
 export default App
