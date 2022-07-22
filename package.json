@@ -2,7 +2,7 @@
     "name": "root",
     "private": true,
     "scripts": {
-        "start": "npx lerna run start --parallel",
+        "start": "npx lerna run start:live --parallel",
         "stop": "kill-port --port 3000,3001,3002",
         "kill": "kill-port --port "
     },
