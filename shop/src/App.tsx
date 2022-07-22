@@ -1,10 +1,11 @@
 import React from 'react'
-import { ThemeProvider } from 'common/Theme'
+import ProductsGrid from './components/products-grid'
+import MainLayout from './layouts/MainLayout'
 
 const App = () => (
-  <ThemeProvider>
-    <div>Landing</div>
-  </ThemeProvider>
+  <MainLayout>
+    <ProductsGrid />
+  </MainLayout>
 )
 
 export default App
