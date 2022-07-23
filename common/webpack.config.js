@@ -62,10 +62,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'common',
       filename: 'remoteEntry.js',
-      remotes: {
-        shop: 'shop@http://localhost:3001/remoteEntry.js',
-        cart: 'cart@http://localhost:3002/remoteEntry.js',
-      },
+      remotes: {},
       exposes: {
         './Store': './src/store',
         './Theme': './src/theme',

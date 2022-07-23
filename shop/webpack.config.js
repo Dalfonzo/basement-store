@@ -64,6 +64,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         common: 'common@http://localhost:3000/remoteEntry.js',
+        cart: 'cart@http://localhost:3002/remoteEntry.js',
       },
       exposes: {
         './Shop': './src/bootstrap.tsx',

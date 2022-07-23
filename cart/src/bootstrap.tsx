@@ -1,14 +1,10 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import routes from './routes'
+import App from './App'
+import { ThemeProvider } from 'common/Theme'
 
 createRoot(document.querySelector('#cart_root')!).render(
-  <BrowserRouter>
-    <Routes>
-      {routes.map((route, key) => (
-        <Route {...route} key={key} />
-      ))}
-    </Routes>
-  </BrowserRouter>
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>
 )
