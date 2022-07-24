@@ -3,6 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme, theme } from '@chakra-ui/react'
 import styles from './styles'
 import Fonts from './foundations/fonts'
+import Modal from './components/modal'
 
 const customTheme = {
   ...theme,
@@ -12,6 +13,9 @@ const customTheme = {
     text: 'basement-grotesque',
   },
   styles,
+  components: {
+    Modal,
+  },
 }
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => (

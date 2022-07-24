@@ -3,14 +3,7 @@ import React, { useEffect, useState } from 'react'
 import api from '../../api'
 import ProductCard from './ProductCard'
 import ProductCardSkeleton from './ProductCard.skeleton'
-
-export interface ProductI {
-  id: number
-  image: string
-  price: number
-  name: string
-  sizes: string[]
-}
+import { ProductI } from 'common/src/types'
 
 interface StateI {
   data?: ProductI[] | null
