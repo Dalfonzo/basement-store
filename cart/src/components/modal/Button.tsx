@@ -3,9 +3,10 @@ import { Button, useDisclosure } from '@chakra-ui/react'
 import useStore from '../../store'
 import { StoreT } from 'common/src/types'
 
-const ButtonComponent = ({ onOpen }: { onOpen: ReturnType<typeof useDisclosure>['onOpen'] }) => {
-  const { totalItems } = useStore((state: StoreT) => ({
+const ButtonComponent = () => {
+  const { totalItems, onOpen } = useStore((state: StoreT) => ({
     totalItems: state.totalItems,
+    onOpen: state.onOpen,
   }))
 
   return (

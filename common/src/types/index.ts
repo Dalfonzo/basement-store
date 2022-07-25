@@ -10,6 +10,9 @@ export interface ProductI {
 }
 
 export interface CartSliceI {
+  isOpen: boolean
+  onOpen: () => void
+  onClose: () => void
   totalPrice: number
   items: ProductI[]
   totalItems: number

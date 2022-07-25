@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Modal,
   ModalOverlay,
@@ -19,15 +19,16 @@ import useStore from '../../store'
 import { StoreT, ProductI } from 'common/src/types'
 
 const ModalComponent = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const { items, totalPrice } = useStore((state: StoreT) => ({
+  const { items, totalPrice, isOpen, onClose } = useStore((state: StoreT) => ({
     items: state.items,
     totalPrice: state.totalPrice,
+    isOpen: state.isOpen,
+    onClose: state.onClose,
   }))
 
   return (
     <>
-      <Button onOpen={onOpen} />
+      <Button />
       <Modal isOpen={isOpen} onClose={onClose} size="4xl">
         <ModalOverlay />
         <ModalContent

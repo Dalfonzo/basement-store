@@ -13,6 +13,9 @@ const calculateTotals = (items: ProductI[]) => {
 }
 
 export const createCartSlice: StateCreator<CartSliceI, [], [], CartSliceI> = (set) => ({
+  isOpen: false,
+  onOpen: () => set((state) => ({ ...state, isOpen: true })),
+  onClose: () => set((state) => ({ ...state, isOpen: false })),
   totalPrice: 0,
   items: [],
   totalItems: 0,
@@ -34,7 +37,7 @@ export const createCartSlice: StateCreator<CartSliceI, [], [], CartSliceI> = (se
         items: itemAlreadyExists ? updatedItems : [...state.items, { ...payload, amount: 1, size: payload.sizes[0] }],
       }
 
-      return { ...newState, ...calculateTotals(newState.items) }
+      return { ...newState, ...calculateTotals(newState.items), isOpen: true }
     }),
   removeItem: (id) => set((state) => ({ ...state, items: state.items.filter((item) => item.id !== id) })),
   increaseItemAmount: (id) =>
