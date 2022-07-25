@@ -5,7 +5,7 @@ require('dotenv').config()
 
 module.exports = {
   output: {
-    publicPath: process.env.COMMON_PUBLIC_PATH,
+    publicPath: process.env.COMMON_PUBLIC_PATH || '/',
   },
 
   resolve: {

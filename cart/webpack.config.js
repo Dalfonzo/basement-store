@@ -5,7 +5,7 @@ require('dotenv').config()
 
 module.exports = {
   output: {
-    publicPath: process.env.CART_PUBLIC_PATH,
+    publicPath: process.env.CART_PUBLIC_PATH || '/',
   },
 
   resolve: {
