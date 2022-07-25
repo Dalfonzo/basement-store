@@ -9,6 +9,7 @@ const styles = {
       fontFamily: 'basement-grotesque',
     },
     body: {
+      overflowX: 'hidden',
       height: '100%',
       background: 'black',
       color: 'white',
