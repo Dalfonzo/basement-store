@@ -10,8 +10,17 @@ import Cart from 'cart/Cart'
 
 const Header = () => {
   return (
-    <Box as={'header'} padding="2rem 0">
-      <Flex justifyContent="space-between" padding={'0 2rem'}>
+    <Box as={'header'} padding="4rem 0">
+      <Flex
+        justifyContent="space-between"
+        padding={'1rem 2rem'}
+        position="fixed"
+        width="100%"
+        top="0"
+        left="0"
+        background="black"
+        zIndex="10"
+      >
         <Image src={Logo} alt="Logo" />
         <Image src={Decoration} alt="decoration" />
         <Cart />
