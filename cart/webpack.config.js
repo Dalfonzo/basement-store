@@ -1,10 +1,11 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-
 const deps = require('./package.json').dependencies
+require('dotenv').config()
+
 module.exports = {
   output: {
-    publicPath: 'http://localhost:3002/',
+    publicPath: process.env.CART_PUBLIC_PATH,
   },
 
   resolve: {
@@ -63,7 +64,7 @@ module.exports = {
       name: 'cart',
       filename: 'remoteEntry.js',
       remotes: {
-        common: 'common@http://localhost:3000/remoteEntry.js',
+        common: `common@${process.env.COMMON_PUBLIC_PATH}remoteEntry.js`,
       },
       exposes: {
         './Cart': './src/App.tsx',
