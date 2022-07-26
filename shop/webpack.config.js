@@ -90,7 +90,7 @@ module.exports = {
       title: 'Basement Studio Shop - A beautiful and awesome store',
       hash: true,
       meta: {
-        'og:image': { property: 'og:image', content: 'https://basement.dap.codes/OG.png' },
+        'og:image': { property: 'og:image', content: 'https://raw.githubusercontent.com/Dalfonzo/basement-store/master/shop/src/assets/img/OG.png' },
         description: {
           name: 'description',
           content: 'A beautiful and awesome store where you can buy everything you need to look incredible.',
