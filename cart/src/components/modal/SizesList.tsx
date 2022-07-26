@@ -26,6 +26,7 @@ const SizesList = ({ sizes, itemId }: { sizes: string[]; itemId: number }) => {
 
   const { getRadioProps, getRootProps } = useRadioGroup({
     onChange: (value) => changeItemSize(itemId, value),
+    defaultValue: sizes[0],
   })
 
   return (
