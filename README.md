@@ -12,4 +12,5 @@ The design was made by [basement-studio](https://basement.studio/). I gave it li
   ```
 # TO-DO
 
-- [] Add a custom cursor
+- [ ] Add a custom cursor
+- [ ] Improve performance
