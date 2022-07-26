@@ -6,7 +6,13 @@ import { ProductI } from 'common/src/types'
 
 const ProductCard = ({ data }: { data: ProductI }) => {
   return (
-    <Box border="1px solid white" width="100%" display="flex" padding={{ base: '0.5rem', sm: '1rem' }}>
+    <Box
+      border="1px solid white"
+      width="100%"
+      display="flex"
+      padding={{ base: '0.5rem', sm: '1rem' }}
+      margin="0.5rem 0"
+    >
       <AspectRatio
         maxW="300px"
         ratio={0.9}
