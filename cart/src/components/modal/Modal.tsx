@@ -1,16 +1,6 @@
-import React, { useState } from 'react'
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-  useDisclosure,
-  ModalFooter,
-  Text,
-  Image,
-  Box,
-} from '@chakra-ui/react'
-import Button from './Button'
+import React from 'react'
+import { Modal, ModalOverlay, ModalContent, ModalBody, Button, ModalFooter, Text, Image, Box } from '@chakra-ui/react'
+import CustomButton from './Button'
 import your from '../../assets/svg/your.svg'
 import cart from '../../assets/svg/cart.svg'
 import checkout from '../../assets/svg/checkout.svg'
@@ -19,16 +9,17 @@ import useStore from '../../store'
 import { StoreT, ProductI } from 'common/src/types'
 
 const ModalComponent = () => {
-  const { items, totalPrice, isOpen, onClose } = useStore((state: StoreT) => ({
+  const { items, totalPrice, isOpen, onClose, checkoutHandler } = useStore((state: StoreT) => ({
     items: state.items,
     totalPrice: state.totalPrice,
     isOpen: state.isOpen,
     onClose: state.onClose,
+    checkoutHandler: state.checkoutHandler,
   }))
 
   return (
     <>
-      <Button />
+      <CustomButton />
       <Modal isOpen={isOpen} onClose={onClose} size={{ base: 'full', md: 'xl', lg: '2xl', xl: '4xl' }}>
         <ModalOverlay />
         <ModalContent
@@ -86,7 +77,8 @@ const ModalComponent = () => {
               width={{ base: '100%', sm: '70%' }}
               fontSize={['1.25rem', '1.56rem', '1.88rem', '2.19rem']}
               display="flex"
-              padding={{ base: '1rem 2rem', sm: '0' }}
+              padding={{ base: '1rem 2rem', sm: '0 1rem' }}
+              marginRight="auto"
             >
               <Box as="span" textTransform="uppercase">
                 Total:
@@ -95,16 +87,26 @@ const ModalComponent = () => {
                 ${totalPrice}
               </Box>
             </Text>
-            <Image
+            <Button
+              disabled={items.length === 0}
+              _disabled={{ display: 'none', pointerEvents: 'none' }}
+              onClick={checkoutHandler}
               borderColor="white"
               borderStyle="solid"
               borderWidth={{ base: '1px 0 0 0', sm: '0 0 0 1px' }}
-              padding={['1.00rem 2rem', '1.33rem', '1.67rem', '2.00rem']}
-              src={checkout}
-              alt="checkout"
+              padding={['2rem', '1.33rem', '1.67rem', '2.00rem']}
               width={{ base: '100%', sm: '30%' }}
+              backgroundImage={checkout}
+              backgroundColor="black"
+              backgroundRepeat="no-repeat"
+              backgroundPosition="center"
+              backgroundSize="80%"
+              borderRadius="0"
               _hover={{
-                cursor: 'pointer',
+                backgroundColor: 'black',
+              }}
+              _active={{
+                backgroundColor: 'black',
               }}
             />
           </ModalFooter>

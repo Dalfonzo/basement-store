@@ -13,6 +13,10 @@ const calculateTotals = (items: ProductI[]) => {
 }
 
 export const createCartSlice: StateCreator<CartSliceI, [], [], CartSliceI> = (set) => ({
+  stopConfetti: () => set((state) => ({ ...state, confetti: false })),
+  confetti: false,
+  checkoutHandler: () =>
+    set((state) => ({ ...state, totalPrice: 0, items: [], totalItems: 0, isOpen: false, confetti: true })),
   isOpen: false,
   onOpen: () => set((state) => ({ ...state, isOpen: true })),
   onClose: () => set((state) => ({ ...state, isOpen: false })),

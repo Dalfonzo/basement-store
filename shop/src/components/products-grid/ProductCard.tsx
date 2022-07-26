@@ -15,8 +15,7 @@ const ProductCard = ({ data }: { data: ProductI }) => {
 
   React.useEffect(() => {
     const itemExists = items.find((item: ProductI) => item.id === data.id)
-    if (!itemExists) return
-    setIsSelected(true)
+    setIsSelected(itemExists)
   }, [items, data])
 
   return (

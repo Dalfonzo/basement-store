@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductsGrid from './components/products-grid'
 import MainLayout from './layouts/MainLayout'
 import { Box, Image } from '@chakra-ui/react'
@@ -6,9 +6,35 @@ import { motion } from 'framer-motion'
 import Asterisk1 from './assets/svg/asterisk_a.svg'
 import Asterisk2 from './assets/svg/asterisk_b.svg'
 import useResizeObserver from 'use-resize-observer'
+import useStore from './store'
+import { StoreT } from 'common/src/types'
+import Confetti from 'react-dom-confetti'
 
 const App = () => {
   const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>()
+
+  const { stopConfetti, confetti } = useStore((state: StoreT) => ({
+    stopConfetti: state.stopConfetti,
+    confetti: state.confetti,
+  }))
+
+  const config = {
+    angle: 346,
+    spread: 360,
+    startVelocity: 40,
+    elementCount: 174,
+    dragFriction: 0.12,
+    duration: 1500,
+    stagger: 2,
+    width: '78px',
+    height: '28px',
+    perspective: '998px',
+    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
+  }
+
+  useEffect(() => {
+    stopConfetti()
+  }, [confetti, stopConfetti])
 
   return (
     <Box ref={ref}>
@@ -65,6 +91,9 @@ const App = () => {
         <Image src={Asterisk2} alt="asterisk" width="100%" height="100%" pointerEvents="none" />
       </motion.div>
       <MainLayout>
+        <Box margin="auto" width="fit-content" visibility="hidden" position="sticky" top="50%" left="50%">
+          <Confetti active={confetti} config={config} />
+        </Box>
         <ProductsGrid />
       </MainLayout>
     </Box>

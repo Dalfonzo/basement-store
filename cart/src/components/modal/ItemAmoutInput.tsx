@@ -23,10 +23,19 @@ const ItemAmountInput = ({ value, itemId }: { value: number; itemId: number }) =
         _hover={{ cursor: 'pointer' }}
         fontSize="1.1em"
         lineHeight="1"
+        userSelect="none"
       >
         -
       </Text>
-      <Text border="none" maxWidth="30px" padding="0" textAlign="center" fontSize="1em" height="fit-content">
+      <Text
+        border="none"
+        maxWidth="30px"
+        padding="0"
+        textAlign="center"
+        fontSize="1em"
+        height="fit-content"
+        userSelect="none"
+      >
         {value}
       </Text>
       <Text
@@ -35,6 +44,7 @@ const ItemAmountInput = ({ value, itemId }: { value: number; itemId: number }) =
         _hover={{ cursor: 'pointer' }}
         fontSize="1.1em"
         lineHeight="1"
+        userSelect="none"
       >
         +
       </Text>
