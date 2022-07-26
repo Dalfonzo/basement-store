@@ -50,12 +50,13 @@ const App = () => {
         style={{
           width: 0.1 * width,
           height: 0.1 * width,
-          minWidth: '50px',
-          minHeight: '50px',
+          minWidth: '70px',
+          minHeight: '70px',
           zIndex: '999',
           position: 'absolute',
           top: height * 0.75 + 'px',
           left: width * 0.75 + 'px',
+          cursor: 'grab',
         }}
         animate={{
           rotate: [0, 360, -360, 0],
@@ -76,12 +77,13 @@ const App = () => {
         style={{
           width: 0.1 * width,
           height: 0.1 * width,
-          minWidth: '50px',
-          minHeight: '50px',
+          minWidth: '70px',
+          minHeight: '70px',
           zIndex: '999',
           position: 'absolute',
           top: height * 0.3 + 'px',
           left: width * 0.3 + 'px',
+          cursor: 'grab',
         }}
         animate={{
           rotate: [0, -360, 360, 0],
