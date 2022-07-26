@@ -85,6 +85,7 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
+      favicon: "./src/assets/img/favicon.png"
     }),
   ],
 }
