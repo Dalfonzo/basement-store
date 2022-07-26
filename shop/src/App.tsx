@@ -13,9 +13,9 @@ import Confetti from 'react-dom-confetti'
 const App = () => {
   const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>()
 
-  const { stopConfetti, confetti } = useStore((state: StoreT) => ({
+  const { stopConfetti, fireConfetti } = useStore((state: StoreT) => ({
     stopConfetti: state.stopConfetti,
-    confetti: state.confetti,
+    fireConfetti: state.fireConfetti,
   }))
 
   const config = {
@@ -34,7 +34,7 @@ const App = () => {
 
   useEffect(() => {
     stopConfetti()
-  }, [confetti, stopConfetti])
+  }, [fireConfetti, stopConfetti])
 
   return (
     <Box ref={ref}>
@@ -92,7 +92,7 @@ const App = () => {
       </motion.div>
       <MainLayout>
         <Box margin="auto" width="fit-content" visibility="hidden" position="sticky" top="50%" left="50%">
-          <Confetti active={confetti} config={config} />
+          <Confetti active={fireConfetti} config={config} />
         </Box>
         <ProductsGrid />
       </MainLayout>

@@ -11,7 +11,7 @@ export interface ProductI {
 
 export interface CartSliceI {
   stopConfetti(): void
-  confetti: boolean
+  fireConfetti: boolean
   checkoutHandler: () => void
   isOpen: boolean
   onOpen: () => void
