@@ -22,8 +22,10 @@ const App = () => {
           bottom: height - 100 - height * 0.75,
         }}
         style={{
-          width: '100px',
-          height: '100px',
+          width: 0.1 * width,
+          height: 0.1 * width,
+          minWidth: '50px',
+          minHeight: '50px',
           zIndex: '999',
           position: 'absolute',
           top: height * 0.75 + 'px',
@@ -46,8 +48,10 @@ const App = () => {
           bottom: height - 100 - height * 0.3,
         }}
         style={{
-          width: '100px',
-          height: '100px',
+          width: 0.1 * width,
+          height: 0.1 * width,
+          minWidth: '50px',
+          minHeight: '50px',
           zIndex: '999',
           position: 'absolute',
           top: height * 0.3 + 'px',

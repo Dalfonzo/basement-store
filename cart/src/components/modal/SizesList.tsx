@@ -13,7 +13,7 @@ const ListItem = (props: RadioProps & { label: string }) => {
         {...getLabelProps()}
         border={state.isChecked ? '1px solid white' : '1px solid black'}
         borderRadius="50%"
-        padding="0 0.5rem"
+        padding={{ base: '0', sm: '0 0.5rem"' }}
       >
         {props.label}
       </Text>

@@ -16,7 +16,7 @@ const ButtonComponent = () => {
       _hover={{ background: 'white', color: 'black' }}
       borderRadius="50px"
       padding="0 2rem"
-      fontSize="1.125rem"
+      fontSize={['0.88rem', '0.96rem', '1.04rem', '1.13rem']}
       onClick={onOpen}
     >
       Cart ({totalItems})

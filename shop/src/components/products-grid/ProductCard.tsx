@@ -51,7 +51,7 @@ const ProductCard = ({ data }: { data: ProductI }) => {
         display="flex"
         justifyContent="space-between"
         borderTop="2px solid white"
-        fontSize="1.3rem"
+        fontSize={['1.13rem', '1.19rem', '1.25rem', '1.31rem']}
         padding="0.5rem 0"
       >
         {data.name} <Text as="span">${data.price}</Text>

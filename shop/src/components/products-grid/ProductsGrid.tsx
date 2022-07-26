@@ -36,7 +36,11 @@ const ProductsGrid = () => {
   }, [])
 
   return (
-    <Grid gap="2rem" gridTemplateColumns="repeat(3, minmax(0px, 1fr))" padding="0 2rem">
+    <Grid
+      gap="2rem"
+      gridTemplateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' }}
+      padding="0 2rem"
+    >
       {isLoading && [-1, -2, -3].map((item) => <ProductCardSkeleton key={item} />)}
       {isSuccess && data?.map((item) => <ProductCard key={item.id} data={item} />)}
     </Grid>

@@ -15,24 +15,25 @@ const ItemAmountInput = ({ value, itemId }: { value: number; itemId: number }) =
       alignItems="center"
       justifyContent="center"
       width="fit-content"
+      fontSize={['0.69rem', '0.90rem', '1.10rem', '1.31rem']}
     >
       <Text
         onClick={() => decreaseItemAmount(itemId)}
         padding="0.2rem .6rem"
         _hover={{ cursor: 'pointer' }}
-        fontSize="1.5rem"
+        fontSize="1.1em"
         lineHeight="1"
       >
         -
       </Text>
-      <Text border="none" maxWidth="30px" padding="0" textAlign="center" fontSize="1.1rem" height="fit-content">
+      <Text border="none" maxWidth="30px" padding="0" textAlign="center" fontSize="1em" height="fit-content">
         {value}
       </Text>
       <Text
         onClick={() => increaseItemAmount(itemId)}
         padding="0.2rem .6rem"
         _hover={{ cursor: 'pointer' }}
-        fontSize="1.5rem"
+        fontSize="1.1em"
         lineHeight="1"
       >
         +
