@@ -85,7 +85,17 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      favicon: "./src/assets/img/favicon.png"
+      favicon: './src/assets/img/favicon.png',
+      minify: true,
+      title: 'Basement Studio Shop - A beautiful and awesome store',
+      hash: true,
+      meta: {
+        'og:image': { property: 'og:image', content: './src/assets/img/OG.png' },
+        description: {
+          name: 'description',
+          content: 'A beautiful and awesome store where you can buy everything you need to look incredible.',
+        },
+      },
     }),
   ],
 }
