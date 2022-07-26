@@ -43,7 +43,15 @@ export const createCartSlice: StateCreator<CartSliceI, [], [], CartSliceI> = (se
 
       return { ...newState, ...calculateTotals(newState.items), isOpen: true }
     }),
-  removeItem: (id) => set((state) => ({ ...state, items: state.items.filter((item) => item.id !== id) })),
+  removeItem: (id) =>
+    set((state) => {
+      const newItems = state.items.filter((item) => item.id !== id)
+      return {
+        ...state,
+        items: newItems,
+        ...calculateTotals(newItems),
+      }
+    }),
   increaseItemAmount: (id) =>
     set((state) => {
       let newState = {} as CartSliceI

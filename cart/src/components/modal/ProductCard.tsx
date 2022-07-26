@@ -1,10 +1,14 @@
 import React from 'react'
-import { Box, Text, Image, AspectRatio } from '@chakra-ui/react'
+import { Box, Text, Image, AspectRatio, Button } from '@chakra-ui/react'
 import ItemAmoutInput from './ItemAmoutInput'
 import SizesList from './SizesList'
-import { ProductI } from 'common/src/types'
+import useStore from '../../store'
+import { StoreT, ProductI } from 'common/src/types'
 
 const ProductCard = ({ data }: { data: ProductI }) => {
+  const { removeItem } = useStore((state: StoreT) => ({
+    removeItem: state.removeItem,
+  }))
   return (
     <Box
       border="1px solid white"
@@ -12,7 +16,23 @@ const ProductCard = ({ data }: { data: ProductI }) => {
       display="flex"
       padding={{ base: '0.5rem', sm: '1rem' }}
       margin="0.5rem 0"
+      position="relative"
     >
+      <Button
+        position="absolute"
+        top={{ base: '0.5rm', sm: '1rem' }}
+        right={{ base: '0.5rem', sm: '1rem' }}
+        padding="0"
+        height="fit-content"
+        width=" fit-content"
+        fontSize={{ base: '0.8em', sm: '1.5em' }}
+        onClick={() => removeItem(data.id)}
+        background="unset"
+        _hover={{ background: 'unset' }}
+        _active={{ background: 'unset' }}
+      >
+        X
+      </Button>
       <AspectRatio
         maxW="300px"
         ratio={0.9}
