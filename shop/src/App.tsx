@@ -93,7 +93,15 @@ const App = () => {
         <Image src={Asterisk2} alt="asterisk" width="100%" height="100%" pointerEvents="none" />
       </motion.div>
       <MainLayout>
-        <Box margin="auto" width="fit-content" visibility="hidden" position="sticky" top="50%" left="50%">
+        <Box
+          margin="auto"
+          width="fit-content"
+          visibility="hidden"
+          position="sticky"
+          top="50%"
+          left="50%"
+          zIndex={10}
+        >
           <Confetti active={fireConfetti} config={config} />
         </Box>
         <ProductsGrid />
