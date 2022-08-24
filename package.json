@@ -3,6 +3,7 @@
     "private": true,
     "scripts": {
         "start": "npx lerna run start:live --parallel",
+        "build:start": "npx lerna run build:start --parallel",
         "stop": "kill-port --port 3000,3001,3002",
         "kill": "kill-port --port "
     },
