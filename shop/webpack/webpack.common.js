@@ -1,12 +1,13 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-const deps = require('./package.json').dependencies
+const deps = require('../package.json').dependencies
 require('dotenv').config()
 
 module.exports = {
   output: {
     publicPath: process.env.SHOP_PUBLIC_PATH || '/',
     assetModuleFilename: '[name][ext]',
+    clean: true,
   },
 
   resolve: {
@@ -89,7 +90,6 @@ module.exports = {
       favicon: './src/assets/img/favicon.png',
       minify: true,
       title: 'Basement Studio Shop - A beautiful and awesome store',
-      hash: true,
       meta: {
         'og:image': {
           property: 'og:image',

@@ -1,21 +1,22 @@
 {
-    "name": "root",
-    "private": true,
-    "scripts": {
-        "start": "npx lerna run start:live --parallel",
-        "build:start": "npx lerna run build:start --parallel",
-        "stop": "kill-port --port 3000,3001,3002",
-        "kill": "kill-port --port "
-    },
-    "devDependencies": {
-        "lerna": "^5.1.8"
-    },
-    "workspaces": [
-        "cart",
-        "common",
-        "shop"
-    ],
-    "dependencies": {
-        "kill-port": "^2.0.1"
-    }
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "start": "npx lerna run start:live --parallel",
+    "build:start": "npx lerna run build:start --parallel",
+    "analyzer": "npx lerna run analyzer --parallel",
+    "stop": "kill-port --port 3000,3001,3002,8000,8001,8002",
+    "kill": "kill-port --port "
+  },
+  "devDependencies": {
+    "lerna": "^5.1.8"
+  },
+  "workspaces": [
+    "cart",
+    "common",
+    "shop"
+  ],
+  "dependencies": {
+    "kill-port": "^2.0.1"
+  }
 }

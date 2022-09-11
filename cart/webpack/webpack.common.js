@@ -1,11 +1,13 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
-const deps = require('./package.json').dependencies
+const deps = require('../package.json').dependencies
 require('dotenv').config()
 
 module.exports = {
   output: {
     publicPath: process.env.CART_PUBLIC_PATH || '/',
+    assetModuleFilename: '[name][ext]',
+    clean: true,
   },
 
   resolve: {
