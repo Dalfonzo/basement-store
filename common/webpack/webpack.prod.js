@@ -14,6 +14,11 @@ module.exports = merge(common, {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024, // 10 kb
+          },
+        },
         use: [
           {
             loader: 'image-webpack-loader',
