@@ -1,6 +1,6 @@
-import Cap from '../assets/img/cap.png'
-import Hoodie from '../assets/img/hoodie.png'
-import Shirt from '../assets/img/shirt.png'
+import Cap from '../assets/img/cap.webp'
+import Hoodie from '../assets/img/hoodie.webp'
+import Shirt from '../assets/img/shirt.webp'
 import { ProductI } from 'common/src/types'
 
 export default {

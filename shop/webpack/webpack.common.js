@@ -53,7 +53,7 @@ module.exports = {
             type: 'asset/inline',
           },
           {
-            test: /\.(jpg|png|svg)$/,
+            test: /\.(jpg|png|svg|webp)$/,
             type: 'asset/resource',
           },
         ],
